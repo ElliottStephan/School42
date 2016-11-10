@@ -6,11 +6,13 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:50:56 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/04 19:17:20 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/06 16:21:00 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strstr(const char *phrase, const char *mot)
+#include "libft.h"
+
+char	*ft_strstr(const char *phrase, const char *mot)
 {
 	int i;
 	int j;
@@ -18,18 +20,18 @@ char	*strstr(const char *phrase, const char *mot)
 
 	i = 0;
 	k = 0;
-	if (to_find[0] == '\0')
+	if (mot[0] == '\0')
 		return (char*)(phrase);
-	while (str[i] != '\0')
+	while (phrase[i] != '\0')
 	{
 		j = i;
 		k = 0;
-		while (str[j] == phrase[k])
+		while (phrase[j] == mot[k])
 		{
 			j++;
 			k++;
-			if (phrase[k] == '\0')
-				return (char*)(&str[i]);
+			if (mot[k] == '\0')
+				return (char*)(&phrase[i]);
 		}
 		i++;
 	}

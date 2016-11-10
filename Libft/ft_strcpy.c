@@ -6,11 +6,13 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:13:22 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/04 15:27:28 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/06 16:18:05 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *src, char *dest)
+#include "libft.h"
+
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 

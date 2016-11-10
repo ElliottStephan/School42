@@ -1,32 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:22:29 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/06 16:19:28 by estephan         ###   ########.fr       */
+/*   Created: 2016/11/09 11:03:47 by estephan          #+#    #+#             */
+/*   Updated: 2016/11/10 13:28:39 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, int nb)
+int		ft_s(const char *s)
 {
-	int i;
-	int j;
+	return (ft_strlen(s));
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*fraiche;
+	int		i;
+	int		f;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < nb)
+	f = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(fraiche = malloc(sizeof(char) * (ft_s(s1) + ft_s(s2) + 1))))
+		return (NULL);
+	while (s1[i])
 	{
-		dest[i] = src[j];
+		fraiche[f] = s1[i];
+		f++;
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	i = 0;
+	while (s2[i])
+	{
+		fraiche[f] = s2[i];
+		f++;
+		i++;
+	}
+	fraiche[f] = '\0';
+	return (fraiche);
 }

@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:22:29 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/06 16:19:28 by estephan         ###   ########.fr       */
+/*   Created: 2016/11/07 09:50:38 by estephan          #+#    #+#             */
+/*   Updated: 2016/11/07 09:53:12 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, int nb)
+int		ft_isalpha(int i)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < nb)
+	if ((i >= 'A' && i <= 'Z') || (i >= 'a' && i <= 'z'))
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		return (1);
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:15:22 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/04 14:26:36 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/05 18:33:12 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (src[i])
 		i++;
-	dupli = (char*)malloc(sizeof(*dupli) * i);
+	dupli = (char*)malloc(sizeof(*dupli) * (i + 1));
 	if (dupli == NULL)
 		return (NULL);
 	i = 0;

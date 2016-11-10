@@ -6,11 +6,13 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:07:37 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/04 15:10:38 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/09 10:34:48 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int i;
 
@@ -20,5 +22,5 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	if (s1[i] == s2[i])
 		return (0);
 	else
-		return ((s1[i] - '0') - (s2[i] - '0'));
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

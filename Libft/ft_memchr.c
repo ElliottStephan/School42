@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:22:29 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/06 16:19:28 by estephan         ###   ########.fr       */
+/*   Created: 2016/11/08 14:30:20 by estephan          #+#    #+#             */
+/*   Updated: 2016/11/08 14:44:16 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, int nb)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
-	int j;
+	size_t	b;
+	char	*ps;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0' && j < nb)
+	b = 0;
+	ps = (char*)s;
+	while (b != n && ps[b])
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		if (ps[b] == c)
+			return (&ps[b]);
+		b++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	if (ps[b] == c)
+		return (&ps[b]);
+	return (NULL);
 }
