@@ -6,39 +6,73 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 14:32:42 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/10 14:13:21 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/15 11:44:24 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static	int		ft_count_words(const char *str, char c)
 {
-	char	**ret;
-	size_t	i;
-	size_t	j;
-	size_t	len;
+	int	word;
+	int	i;
 
-	if (!s || !c)
+	i = 0;
+	word = 0;
+	if (!str)
 		return (0);
-	ret = ft_memalloc(ft_strlen(s) + 1);
-	if (ret == NULL)
+	while (str[i])
+	{
+		if (str[i] == c && str[i + 1] != c)
+			word++;
+		i++;
+	}
+	if (str[0] != '\0')
+		word++;
+	return (word);
+}
+
+static	char	*ft_word(const char *str, char c, int *i)
+{
+	char	*s;
+	int		k;
+
+	if (!(s = (char *)malloc(sizeof(s) * (ft_strlen(str)))))
 		return (NULL);
+	k = 0;
+	while (str[*i] != c && str[*i])
+	{
+		s[k] = str[*i];
+		k++;
+		*i += 1;
+	}
+	s[k] = '\0';
+	while (str[*i] == c && str[*i])
+		*i += 1;
+	return (s);
+}
+
+char			**ft_strsplit(const char *str, char c)
+{
+	int		i;
+	int		j;
+	int		wrd;
+	char	**s;
+
 	i = 0;
 	j = 0;
-	while (s[i])
+	if (!str || !c)
+		return (NULL);
+	wrd = ft_count_words(str, c);
+	if (!(s = (char **)malloc(sizeof(s) * (wrd + 2))))
+		return (NULL);
+	while (str[i] == c && str[i])
+		i++;
+	while (j < wrd && str[i])
 	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			len = 0;
-			while (s[i + len] && (s[i + len] != c))
-				len++;
-			ret[j++] = ft_strsub(s, i, len);
-			i = i + len;
-		}
+		s[j] = ft_word(str, c, &i);
+		j++;
 	}
-	ret[j] = 0;
-	return (ret);
+	s[j] = NULL;
+	return (s);
 }

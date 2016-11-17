@@ -6,13 +6,13 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:51:44 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/06 16:16:56 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/15 12:06:20 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	int i;
 	int j;

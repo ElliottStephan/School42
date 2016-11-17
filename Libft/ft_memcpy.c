@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:41:52 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/10 15:27:01 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/15 13:14:18 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	b = 0;
 	pdes = dest;
 	ps = (char*)src;
-	while (b != n && ps[b])
+	while (b != n)
 	{
 		pdes[b] = ps[b];
 		b++;
 	}
-	if (b != 0)
-		pdes[b] = '\0';
 	return (dest);
 }

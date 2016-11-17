@@ -6,18 +6,18 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:03:47 by estephan          #+#    #+#             */
-/*   Updated: 2016/11/10 13:28:39 by estephan         ###   ########.fr       */
+/*   Updated: 2016/11/15 15:54:46 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_s(const char *s)
+static int		ft_s(const char *s)
 {
 	return (ft_strlen(s));
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*fraiche;
 	int		i;
