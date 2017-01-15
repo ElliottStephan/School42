@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dynamicalgorithm.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/25 14:31:35 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/28 18:36:55 by ademenet         ###   ########.fr       */
+/*   Created: 2017/01/12 12:17:50 by estephan          #+#    #+#             */
+/*   Updated: 2017/01/15 17:47:39 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/*
-** Let's get funky! Recursive dynamic programing - in fact, backtracking with
-** some specific depth.
-*/
-
-/*
-** We need to clean each time we are coming back. We delete the last move and
-** put the list order back.
-*/
 
 t_plst			*ft_dyn_clean(t_plst *l, t_plst *mv)
 {
@@ -33,10 +23,6 @@ t_plst			*ft_dyn_clean(t_plst *l, t_plst *mv)
 	ft_lstdellastone(mv);
 	return (mv);
 }
-
-/*
-** Here we select the move according to our previous one and the last one.
-*/
 
 t_plst			*ft_dyn_selectmove(t_plst *l, t_plst *mv, int swt)
 {
@@ -54,11 +40,6 @@ t_plst			*ft_dyn_selectmove(t_plst *l, t_plst *mv, int swt)
 	return (mv);
 }
 
-/*
-** We check if the solution is better <=> shorter than our previous, or if it's
-** first solution, we stock it.
-*/
-
 t_plst			*ft_dyn_copy(t_plst *mv, t_plst *sol)
 {
 	t_node		*tmp;
@@ -75,11 +56,6 @@ t_plst			*ft_dyn_copy(t_plst *mv, t_plst *sol)
 	}
 	return (sol);
 }
-
-/*
-** This recursive function explore all the possibilities. It stops when we reach
-** the maximum value (2^DP - 1). We call dyn_copy each times we find a solution.
-*/
 
 int				ft_dyn_explore(t_plst *l, t_plst *mv, t_plst *sol, int index)
 {
@@ -103,11 +79,6 @@ int				ft_dyn_explore(t_plst *l, t_plst *mv, t_plst *sol, int index)
 	}
 	return (1);
 }
-
-/*
-** The master function, which call dyn_explore 3 times: one for each different
-** start movements.
-*/
 
 t_plst			*ft_dyn_resolve(t_plst *l)
 {

@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/26 13:57:46 by ademenet          #+#    #+#             */
-/*   Updated: 2016/06/01 10:38:10 by ademenet         ###   ########.fr       */
+/*   Created: 2017/01/12 12:18:29 by estephan          #+#    #+#             */
+/*   Updated: 2017/01/15 17:46:49 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/*
-** This function allows us to check different conditions, such as if the list is
-** already sorted and so on. It aims to solve basics cases before calling more
-** complexes algorithms.
-*/
 
 t_plst		*ft_choose(t_plst *la, t_plst *lb, t_plst *sol)
 {

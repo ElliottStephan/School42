@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/16 16:09:24 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/24 11:36:30 by ademenet         ###   ########.fr       */
+/*   Created: 2017/01/12 12:18:52 by estephan          #+#    #+#             */
+/*   Updated: 2017/01/15 17:48:40 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /*
-** Because sometimes things goes wrong. Just say "Error" then exit the program.
+** Just write Error when everything is OK
 */
 
 int			ft_error(void)

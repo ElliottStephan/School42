@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/26 13:58:05 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/30 11:40:02 by ademenet         ###   ########.fr       */
+/*   Created: 2017/01/12 12:18:17 by estephan          #+#    #+#             */
+/*   Updated: 2017/01/14 12:04:48 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /*
-** We don't wan't the same number twice. So let's compare my new one with those
-** already in the list. If it's okay, I return the int value.
+** Unique ? or Error.
 */
 
 int				ft_isunique(t_plst *list, int v)
@@ -37,7 +36,7 @@ int				ft_isunique(t_plst *list, int v)
 }
 
 /*
-** I'm sure this is a digit but does it fit into an int value?
+** Int ? or Error.
 */
 
 int				ft_isint(t_plst *list, char *av)
@@ -49,7 +48,7 @@ int				ft_isint(t_plst *list, char *av)
 }
 
 /*
-** If my arg is digit I continue, otherwise... error.
+** Digit ? or Error
 */
 
 int				ft_check(t_plst *list, char *av)
@@ -58,7 +57,7 @@ int				ft_check(t_plst *list, char *av)
 }
 
 /*
-** Here we check if we have some bonuses flags.
+** Check Bonus, just to know where we have to start the parsing
 */
 
 int				ft_checkbonus(char **av, int *bonus)
@@ -82,7 +81,7 @@ int				ft_checkbonus(char **av, int *bonus)
 }
 
 /*
-** We parse and check at the same time. What else?
+** Parsing : Check every "av" ( Be an int, Be unique) stock in la or Ret(error).
 */
 
 t_plst			*ft_parsing(int ac, char **av, int *bonus)

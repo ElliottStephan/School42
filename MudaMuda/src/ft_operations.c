@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/17 13:47:22 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/30 11:37:06 by ademenet         ###   ########.fr       */
+/*   Created: 2017/01/12 12:18:06 by estephan          #+#    #+#             */
+/*   Updated: 2017/01/15 17:46:22 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/*
-** These functions are our basic moves: reverse rotate, rotate, push a, push b
-** and swap. With these we have to sort n random int arguments.
-*/
 
+/*
+** revrorate : last = first other +1
+*/
 t_plst			*ft_revrotate(t_plst *l, t_plst *mv, int ab)
 {
 	t_node		*tmp;

@@ -3,23 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sortmin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/18 10:45:20 by ademenet          #+#    #+#             */
-/*   Updated: 2016/05/30 14:12:36 by ademenet         ###   ########.fr       */
+/*   Created: 2017/01/12 12:19:16 by estephan          #+#    #+#             */
+/*   Updated: 2017/01/15 17:46:01 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /*
-** This sortmin alogrithm is a kind of bubble sort. We are looking for the
-** minimum value and we rotate it up so as to push it in our second stack.
-** With some magic crunch of codes, it gives us an sorted array.
-*/
-
-/*
-** Finding the minimum. Not a big deal but it could cost O(n) operations.
+** find the min in the list.
 */
 
 int				ft_findmin(t_plst *l)
@@ -39,9 +33,7 @@ int				ft_findmin(t_plst *l)
 }
 
 /*
-** Crunch of optimization. If my minimum value is more located in the fisrt part
-** of my array then we use rotate (faster). Otherwise... reverse rotate. You got
-** it!
+** Rotate or revrotate... If min is near -midl or +midl 
 */
 
 static t_plst	*ft_bubble(t_plst *la, t_plst *mv, int min)
@@ -63,8 +55,7 @@ static t_plst	*ft_bubble(t_plst *la, t_plst *mv, int min)
 }
 
 /*
-** I'm looking for the minimum then let it climb the list and push it in
-** b-stack. Yep, it's cruel.
+** Catch the min put him on the top then push him on the top of b
 */
 
 t_plst			*ft_sortmin(t_plst *la, t_plst *lb, t_plst *mv)
