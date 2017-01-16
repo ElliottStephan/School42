@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 12:18:41 by estephan          #+#    #+#             */
-/*   Updated: 2017/01/15 17:47:52 by estephan         ###   ########.fr       */
+/*   Updated: 2017/01/16 14:00:35 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void				ft_display_color(t_plst *mv)
 	int				col;
 
 	tmp = mv->head;
-	col = 31; while (tmp)
+	col = 31;
+	while (tmp)
 	{
 		ft_printf("\x1b[%dm%s\x1b[0m", col, g_push_swap_moves[tmp->v]);
 		if (len < mv->len - 1)

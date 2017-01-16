@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 12:18:29 by estephan          #+#    #+#             */
-/*   Updated: 2017/01/15 17:46:49 by estephan         ###   ########.fr       */
+/*   Updated: 2017/01/16 18:01:33 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_plst		*ft_choose(t_plst *la, t_plst *lb, t_plst *sol)
 	t_plst	*cur;
 
 	cur = ft_pslstnew();
-	if (ft_issortasc(la))
+	while (ft_issortasc(la) != 0)
 	{
 		if (la->len < 20)
 		{
