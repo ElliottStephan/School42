@@ -6,7 +6,7 @@
 /*   By: ademenet <ademenet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 16:11:14 by ademenet          #+#    #+#             */
-/*   Updated: 2017/01/16 18:01:44 by estephan         ###   ########.fr       */
+/*   Updated: 2017/01/17 20:07:18 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ t_plst				*ft_sortcocktail_a(t_plst *l, t_plst *mv);
 
 int					ft_findmin(t_plst *l);
 t_plst				*ft_sortmin(t_plst *la, t_plst *lb, t_plst *mv);
-int                 ft_findmax(t_plst *l);
+int					ft_findmax(t_plst *l);
 
 /*
 ** ft_optimization.c

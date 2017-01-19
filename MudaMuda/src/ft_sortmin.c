@@ -6,14 +6,14 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/12 12:19:16 by estephan          #+#    #+#             */
-/*   Updated: 2017/01/16 19:14:45 by estephan         ###   ########.fr       */
+/*   Updated: 2017/01/17 20:35:44 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /*
-Find one under range.
+** Find one under range.
 */
 
 static long long int		ft_findit(t_plst *l)
@@ -27,18 +27,18 @@ static long long int		ft_findit(t_plst *l)
 	ret = tmp1->v;
 	walid = 0;
 	if (l->len > 20)
-	{	
+	{
 		while (tmp1)
 		{
 			tmp = l->head;
-		while (tmp)
-		{
-			if (ret < tmp->v)
-				walid += 1;
-			if (walid >= ((l->len / 2) + (l->len / 4)))
-				return (ret);
-			tmp = tmp->next;
-		}
+			while (tmp)
+			{
+				if (ret < tmp->v)
+					walid += 1;
+				if (walid >= ((l->len / 2) + (l->len / 4)))
+					return (ret);
+				tmp = tmp->next;
+			}
 			walid = 0;
 			tmp1 = tmp1->next;
 			ret = tmp1->v;
@@ -46,16 +46,17 @@ static long long int		ft_findit(t_plst *l)
 	}
 	else
 		return (ft_findmax(l));
+	return (0);
 }
 
 /*
 ** find the min in the list.
 */
 
-int					ft_findmax(t_plst *l)
+int						ft_findmax(t_plst *l)
 {
-	t_node					*tmp;
-	int						max;
+	t_node				*tmp;
+	int					max;
 
 	tmp = l->head;
 	max = tmp->v;
@@ -68,10 +69,10 @@ int					ft_findmax(t_plst *l)
 	return (max);
 }
 
-int							ft_findmin(t_plst *l)
+int						ft_findmin(t_plst *l)
 {
-	t_node					*tmp;
-	int						min;
+	t_node				*tmp;
+	int					min;
 
 	tmp = l->head;
 	min = tmp->v;
@@ -88,9 +89,9 @@ int							ft_findmin(t_plst *l)
 ** Rotate or revrotate... If min is near -midl or +midl
 */
 
-static t_plst				*ft_bubble(t_plst *la, t_plst *mv, int min)
+static t_plst			*ft_bubble(t_plst *la, t_plst *mv, int min)
 {
-	int						pos;
+	int					pos;
 
 	pos = ft_locateit(la, min);
 	if (pos > 2)
