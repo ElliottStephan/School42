@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Lem_in.c                                           :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/04 14:05:33 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/08 11:23:40 by estephan         ###   ########.fr       */
+/*   Created: 2016/11/04 16:22:29 by estephan          #+#    #+#             */
+/*   Updated: 2016/11/06 16:19:28 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "libft.h"
 
-int			main(int ac, char **av)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
-	int		nb_ants;
-	t_plst	*anthill;
+	int i;
+	int j;
 
-	nb_ants = 0;
-	anthill = ft_pslstnew();
-	ft_build_anthill(&nb_ants,anthill);
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

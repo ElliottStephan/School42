@@ -6,11 +6,11 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 15:48:50 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/14 10:39:06 by estephan         ###   ########.fr       */
+/*   Updated: 2017/02/21 14:21:46 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include/lem_in.h"
 
 t_plst			*ft_pslstnew(void)
 {
@@ -58,5 +58,5 @@ void			ft_name_room(t_plst *anthill, int info, char *s)
 	char	**room;
 
 	room = ft_strsplit(s, ' ');
-	ft_list_append(anthill, room[0], info);
+	ft_list_append(anthill, room[0]);
 }

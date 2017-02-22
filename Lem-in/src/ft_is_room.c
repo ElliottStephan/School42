@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 11:21:40 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/14 11:18:11 by estephan         ###   ########.fr       */
+/*   Updated: 2017/02/21 12:12:51 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_name_ok(char *s, t_plst *anthill)
 	t_node		*tmp;
 	int			ok;
 
-	tmp = list->head;
+	tmp = anthill->head;
 	ok = 0;
 	if (tmp)
 	{

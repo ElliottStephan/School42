@@ -6,9 +6,11 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 13:08:36 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/09 13:55:41 by estephan         ###   ########.fr       */
+/*   Updated: 2017/02/21 12:19:51 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/lem_in.h"
 
 int			ft_isint(char *s)
 {
@@ -43,7 +45,7 @@ int			ft_check(char *s)
 	return(ft_strisdigit(s) ? ft_isint(s) : ft_error1());
 }
 
-void		ft_nb_ants(char	*s)
+int			ft_nb_ants(char	*s)
 {
 	int		v;
 	
