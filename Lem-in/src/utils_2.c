@@ -6,51 +6,67 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 14:08:41 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/21 16:23:17 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/02 17:09:29 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-int      ft_s(const char *s)
+int				ft_s(const char *s)
 {
-	int	i;
+	int			i;
 
 	i = 0;
-	while (s[i] != '\0')
-		i++;
+	if (s)
+	{
+		while (s[i] != '\0')
+			i++;
+	}
 	return (i);
 }
 
-char            *ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin2(char const *s1, char const *s2)
 {
-	char    *fraiche;
-	int     i;
-	int     f;
+	char		*fraiche;
+	int			i;
+	int			f;
 
-	i = 0;
+	i = -1;
 	f = 0;
-	if (!s1 || !s2)
+	if (!s2)
 		return (NULL);
 	if (!(fraiche = malloc(sizeof(char) * (ft_s(s1) + ft_s(s2) + 2))))
 		return (NULL);
-	while (s1[i])
+	return (ft_get_fraiche(s1, s2, fraiche, i));
+}
+
+char			*ft_get_fraiche(const char *s1, const char *s2, char *fr, int i)
+{
+	int			f;
+
+	f = 0;
+	if (s1)
 	{
-		fraiche[f] = s1[i];
-		f++;
-		i++;
+		while (s1[++i])
+		{
+			fr[f] = s1[i];
+			f++;
+		}
 	}
 	i = 0;
-	fraiche[f] = '-';
-	f++;
+	if (f != 0)
+	{
+		fr[f] = '-';
+		f++;
+	}
 	while (s2[i])
 	{
-		fraiche[f] = s2[i];
+		fr[f] = s2[i];
 		f++;
 		i++;
 	}
-	fraiche[f] = '\0';
-	return (fraiche);
+	fr[f] = '\0';
+	return (fr);
 }
 
 int				ft_atoi(const char *str)

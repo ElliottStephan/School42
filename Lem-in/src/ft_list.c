@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 15:48:50 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/21 14:21:46 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/02 16:22:15 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_plst			*ft_list_append(t_plst *list, char *s)
 		if ((new = (t_node*)malloc(sizeof(t_node))) != NULL)
 		{
 			new->name = s;
+			new->pos = -1;
 			new->next = NULL;
 			if (list->tail == NULL)
 			{
@@ -53,10 +54,13 @@ t_plst			*ft_list_append(t_plst *list, char *s)
 	return (list);
 }
 
-void			ft_name_room(t_plst *anthill, int info, char *s)
+int				ft_name_room(t_plst *anthill, int info, char *s)
 {
-	char	**room;
+	char		**room;
 
 	room = ft_strsplit(s, ' ');
 	ft_list_append(anthill, room[0]);
+	if (info)
+		ft_add_info(anthill, room[0], info);
+	return (0);
 }

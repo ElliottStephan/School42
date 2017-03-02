@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 11:21:40 by estephan          #+#    #+#             */
-/*   Updated: 2017/02/21 12:12:51 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/02 16:20:04 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int		ft_is_room(char *s)
 	room = ft_strsplit(s, ' ');
 	if (room[3] == NULL)
 	{
-			ft_check(room[1]);
-		   	ft_check(room[2]);
-			return (1);
+		ft_check(room[1]);
+		ft_check(room[2]);
+		return (1);
 	}
 	return (0);
 }

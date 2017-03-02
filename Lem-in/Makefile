@@ -12,9 +12,11 @@ SRC =		src/ft_is_room.c\
 			src/ft_errors.c\
 			src/ft_links.c\
 			src/ft_nb_ants.c\
-			src/ft_strsplit.c\
 			src/utils.c\
-			src/utils_2.c
+			src/utils_2.c\
+			src/get_next_line.c\
+			src/lem_in.c\
+			src/ft_add_pos.c
 
 OBJS = ft_is_room.o\
 	   ft_list.o\
@@ -22,9 +24,11 @@ OBJS = ft_is_room.o\
 	   ft_errors.o\
 	   ft_links.o\
 	   ft_nb_ants.o\
-	   ft_strsplit.o\
 	   utils.o\
-	   utils_2.o
+	   utils_2.o\
+	   get_next_line.o\
+	   lem_in.o\
+	   ft_add_pos.o
 
 INC_NAME = lem_in.h
 
