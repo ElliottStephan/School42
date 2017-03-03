@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 14:05:33 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/02 16:33:45 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/03 17:41:23 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int			main(void)
 		printf("\n");
 		tmp = tmp->next;
 	}
+	ft_bouge_tes_fourmis(anthill);
 	return (0);
 }

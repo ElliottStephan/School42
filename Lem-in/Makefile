@@ -16,7 +16,8 @@ SRC =		src/ft_is_room.c\
 			src/utils_2.c\
 			src/get_next_line.c\
 			src/lem_in.c\
-			src/ft_add_pos.c
+			src/ft_add_pos.c\
+			src/ft_move_ants.c
 
 OBJS = ft_is_room.o\
 	   ft_list.o\
@@ -28,7 +29,8 @@ OBJS = ft_is_room.o\
 	   utils_2.o\
 	   get_next_line.o\
 	   lem_in.o\
-	   ft_add_pos.o
+	   ft_add_pos.o\
+	   ft_move_ants.o
 
 INC_NAME = lem_in.h
 

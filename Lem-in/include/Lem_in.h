@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 14:15:08 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/02 17:22:06 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/03 16:36:57 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_node
 	int				ants;
 	int				pos;
 	int				type;
+	int				vide;
 	char			*name;
 	char			*link;
 	struct s_node	*next;
@@ -85,4 +86,8 @@ t_node				*ft_this_node(t_plst *anthill, char *s);
 int					ft_parse2_2(int *info, char *s, t_plst *anthill);
 char				*ft_get_fraiche(const char *s1, const char *s2,
 char *fr, int i);
+
+int					ft_bouge_tes_fourmis(t_plst *anthill);
+int					ft_move_them(t_node *tmp, t_node *tmp2, t_plst *anthill);
+int					ft_move_one(t_node *tmp, t_plst *anthill);
 #endif
