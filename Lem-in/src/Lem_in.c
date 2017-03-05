@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 14:05:33 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/03 17:41:23 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/05 17:57:37 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int			main(void)
 	while (tmp)
 	{
 		if (tmp->type == 1)
+		{
 			tmp->ants = nb_ants;
+			tmp->fu = nb_ants;
+		}
 		ft_putendl(ft_itoa(tmp->type));
 		ft_putendl(ft_itoa(tmp->ants));
 		ft_putendl(ft_itoa(tmp->pos));
