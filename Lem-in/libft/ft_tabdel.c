@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Lem_in.c                                           :+:      :+:    :+:   */
+/*   ft_tabdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/04 14:05:33 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/07 15:12:42 by estephan         ###   ########.fr       */
+/*   Created: 2017/03/07 16:41:25 by estephan          #+#    #+#             */
+/*   Updated: 2017/03/07 17:30:50 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "libft.h"
 
-int			main(void)
+void		ft_tabdel(char **as)
 {
-	int		nb_ants;
-	t_plst	*anthill;
-	t_node	*tmp;
+	int		a;
 
-	nb_ants = 0;
-	anthill = ft_pslstnew();
-	ft_build_anthill(&nb_ants, anthill);
-	ft_add_pos(anthill);
-	tmp = anthill->head;
-	while (tmp)
+	a = 0;
+	while (as[a])
 	{
-		if (tmp->type == 1)
-		{
-			tmp->ants = nb_ants;
-			tmp->fu = nb_ants;
-		}
-		tmp = tmp->next;
+		ft_strdel(&as[a]);
+		a++;
 	}
-	ft_bouge_tes_fourmis(anthill);
-	ft_lstclear(anthill);
-	while (1);
-	return (0);
+	free(as);
 }

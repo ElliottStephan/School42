@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/01 11:54:19 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/05 17:16:24 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/07 17:01:52 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int				ft_add_pos2(t_plst *anthill, t_node *tmp)
 		}
 		i++;
 	}
+	ft_tabdel(room);
 	return (0);
 }
 

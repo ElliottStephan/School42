@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 14:55:23 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/05 18:39:04 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/07 17:04:09 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int				ft_move_them(t_node *tmp, t_node *tmp2, t_plst *anthill)
 	tmp = anthill->head;
 	while (tmp2->ants < i)
 	{
+		tmp = anthill->head;
 		while (tmp)
 		{
 			if (tmp->ants == 0)
@@ -51,13 +52,12 @@ int				ft_move_them(t_node *tmp, t_node *tmp2, t_plst *anthill)
 				tmp->vide = 0;
 			tmp = tmp->next;
 		}
-		tmp = anthill->head;
 		while (ft_vide(anthill) != 0)
 		{
 			tmp = ft_find(anthill);
 			ft_move_one(tmp, anthill);
 		}
-		printf("$\n");
+		ft_printf("\n");
 	}
 	return (0);
 }
@@ -73,11 +73,11 @@ int				ft_move_one(t_node *tmp, t_plst *anthill)
 	fu = tmp->fu;
 	tmp->fu -= 1;
 	tmp->ants -= 1;
-	a = 0;
+	a = -1;
 	i = 223456789;
 	tmp2 = anthill->head;
 	room = ft_strsplit(tmp->link, '-');
-	while (room[a])
+	while (room[++a])
 	{
 		while (tmp2)
 		{
@@ -90,11 +90,11 @@ int				ft_move_one(t_node *tmp, t_plst *anthill)
 			tmp2 = tmp2->next;
 		}
 		tmp2 = anthill->head;
-		a++;
 	}
 	tmp->ants += 1;
 	tmp->fu = fu;
-	printf("L%d-%s ", tmp->fu, tmp->name);
+	ft_printf("L%d-%s ", tmp->fu, tmp->name);
+	ft_tabdel(room);
 	return (1);
 }
 
@@ -107,7 +107,8 @@ t_node			*ft_find(t_plst *anthill)
 	tmp2 = anthill->head;
 	while (tmp)
 	{
-		if (tmp->pos < tmp2->pos && tmp->vide == 0 && tmp->pos != 0)
+		if ((tmp->pos < tmp2->pos && tmp->vide == 0 && tmp->pos != 0) ||
+				(tmp2->vide == 1 && tmp->pos != 0))
 			tmp2 = tmp;
 		tmp = tmp->next;
 	}

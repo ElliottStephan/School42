@@ -17,7 +17,8 @@ SRC =		src/ft_is_room.c\
 			src/get_next_line.c\
 			src/lem_in.c\
 			src/ft_add_pos.c\
-			src/ft_move_ants.c
+			src/ft_move_ants.c\
+			src/list_utils.c
 
 OBJS = ft_is_room.o\
 	   ft_list.o\
@@ -30,20 +31,23 @@ OBJS = ft_is_room.o\
 	   get_next_line.o\
 	   lem_in.o\
 	   ft_add_pos.o\
-	   ft_move_ants.o
+	   ft_move_ants.o\
+	   list_utils.o
 
 INC_NAME = lem_in.h
 
 LIB = libft/
 
 
-$(NAME): lib
+$(NAME): lib printf
 	$(CC) $(FLAGS) -I $(LIB) -c $(SRC)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS) -L $(LIB) -lft
+	$(CC) $(FLAGS) -o $(NAME) $(OBJS) -L $(LIB) -lft ft_printf/libftprintf.a
 
 lib:
 	make -C $(LIB)
 
+printf:
+	make -C ft_printf
 all: $(NAME)
 
 clean:
