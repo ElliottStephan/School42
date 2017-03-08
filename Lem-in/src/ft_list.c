@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 15:48:50 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/07 17:32:35 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/08 12:13:10 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ int				ft_name_room(t_plst *anthill, int info, char *s)
 	ft_list_append(anthill, room[0]);
 	if (info)
 		ft_add_info(anthill, room[0], info);
-	ft_tabdel(room);
 	return (0);
 }

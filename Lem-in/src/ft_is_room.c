@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 11:21:40 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/07 17:10:43 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/08 12:12:27 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		ft_is_room(char *s)
 		ft_check(room[2]);
 		return (1);
 	}
-	ft_tabdel(room);
 	return (0);
 }
 
@@ -41,7 +40,6 @@ int		ft_is_link(char *s, t_plst *anthill)
 		if (ft_name_ok(name[0], anthill) && ft_name_ok(name[1], anthill))
 			return (1);
 	}
-	ft_tabdel(name);
 	return (0);
 }
 

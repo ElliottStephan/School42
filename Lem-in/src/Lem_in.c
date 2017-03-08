@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 14:05:33 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/07 15:12:42 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/08 12:04:29 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,20 @@ int			main(void)
 			tmp->ants = nb_ants;
 			tmp->fu = nb_ants;
 		}
+		printf("Type : \n");
+		ft_putendl(ft_itoa(tmp->type));
+		printf("Ants : \n");
+		ft_putendl(ft_itoa(tmp->ants));
+		printf("POS : \n");
+		ft_putendl(ft_itoa(tmp->pos));
+		printf("Name : \n");
+		ft_putendl(tmp->name);
+		printf("Link : \n");
+		ft_putendl(tmp->link);
+		printf("\n");
 		tmp = tmp->next;
 	}
 	ft_bouge_tes_fourmis(anthill);
 	ft_lstclear(anthill);
-	while (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 11:40:04 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/07 17:19:38 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/08 12:12:49 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int			ft_add_links(char *s, t_plst *anthill)
 			tmp = tmp->next;
 		}
 	}
-	ft_tabdel(room);
 	return (0);
 }
 
@@ -54,7 +53,6 @@ int			ft_add_links2(char *s, t_plst *anthill)
 			tmp = tmp->next;
 		}
 	}
-	ft_tabdel(room);
 	return (0);
 }
 

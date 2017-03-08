@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 14:55:23 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/07 17:04:09 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/08 12:13:39 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int				ft_move_them(t_node *tmp, t_node *tmp2, t_plst *anthill)
 
 	i = tmp->ants;
 	tmp = anthill->head;
-	while (tmp2->ants < i)
+	while (tmp2 && tmp2->ants < i)
 	{
 		tmp = anthill->head;
 		while (tmp)
@@ -94,7 +94,6 @@ int				ft_move_one(t_node *tmp, t_plst *anthill)
 	tmp->ants += 1;
 	tmp->fu = fu;
 	ft_printf("L%d-%s ", tmp->fu, tmp->name);
-	ft_tabdel(room);
 	return (1);
 }
 
