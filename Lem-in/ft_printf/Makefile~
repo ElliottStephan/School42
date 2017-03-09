@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+.PHONY: all clean fclean re norme
+
 CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
@@ -65,7 +67,6 @@ OBJLIB = $(addprefix $(OBJLIB_PATH)/,$(OBJLIB_NAME))
 
 all: $(NAME)
 
-
 $(NAME): $(OBJ) $(OBJLIB)
 	@ar rc $(NAME) $(OBJ) $(OBJLIB)
 	@ranlib $(NAME)
@@ -78,8 +79,6 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 $(OBJLIB_PATH)/%.o: $(LIB_PATH)/%.c
 	@mkdir $(OBJLIB_PATH) 2> /dev/null || true
 	@$(CC) -o $@ -c $<
-
-.PHONY: clean fclean re norme
 
 clean:
 	@rm -rf ./obj

@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 14:55:23 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/08 12:13:39 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/09 17:49:52 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,47 +38,45 @@ int				ft_bouge_tes_fourmis(t_plst *anthill)
 int				ft_move_them(t_node *tmp, t_node *tmp2, t_plst *anthill)
 {
 	int			i;
+	int			fu;
 
 	i = tmp->ants;
-	tmp = anthill->head;
 	while (tmp2 && tmp2->ants < i)
 	{
 		tmp = anthill->head;
 		while (tmp)
 		{
-			if (tmp->ants == 0)
+			tmp->vide = 0;
+			if (tmp->ants == 0 || tmp->type == 2)
 				tmp->vide = 1;
-			else
-				tmp->vide = 0;
 			tmp = tmp->next;
 		}
 		while (ft_vide(anthill) != 0)
 		{
 			tmp = ft_find(anthill);
-			ft_move_one(tmp, anthill);
+			fu = tmp->fu;
+			tmp->fu -= 1;
+			tmp->ants -= 1;
+			ft_move_one(tmp, anthill, fu);
 		}
 		ft_printf("\n");
 	}
 	return (0);
 }
 
-int				ft_move_one(t_node *tmp, t_plst *anthill)
+void			ft_move_one(t_node *tmp, t_plst *anthill, int fu)
 {
 	char		**room;
 	int			i;
 	int			a;
-	int			fu;
 	t_node		*tmp2;
 
-	fu = tmp->fu;
-	tmp->fu -= 1;
-	tmp->ants -= 1;
 	a = -1;
 	i = 223456789;
-	tmp2 = anthill->head;
 	room = ft_strsplit(tmp->link, '-');
 	while (room[++a])
 	{
+		tmp2 = anthill->head;
 		while (tmp2)
 		{
 			if (!(ft_strcmp(tmp2->name, room[a])) && tmp2->pos < i)
@@ -89,12 +87,10 @@ int				ft_move_one(t_node *tmp, t_plst *anthill)
 			}
 			tmp2 = tmp2->next;
 		}
-		tmp2 = anthill->head;
 	}
 	tmp->ants += 1;
 	tmp->fu = fu;
 	ft_printf("L%d-%s ", tmp->fu, tmp->name);
-	return (1);
 }
 
 t_node			*ft_find(t_plst *anthill)

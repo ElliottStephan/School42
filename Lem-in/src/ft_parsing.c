@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/04 14:19:32 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/02 16:48:10 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/09 14:27:41 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ void			ft_build_anthill(int *nb_ants, t_plst *anthill)
 	while (get_next_line(0, &s) == 1)
 	{
 		ft_parse1(nb_ants, s, anthill);
+		ft_printf("%s\n", s);
 		free(s);
 	}
+	ft_printf("\n");
 }
 
 int				ft_parse1(int *nb_ants, char *s, t_plst *anthill)

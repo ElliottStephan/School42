@@ -6,7 +6,7 @@
 /*   By: estephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 11:21:40 by estephan          #+#    #+#             */
-/*   Updated: 2017/03/08 12:12:27 by estephan         ###   ########.fr       */
+/*   Updated: 2017/03/08 17:28:45 by estephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_is_link(char *s, t_plst *anthill)
 		if (ft_name_ok(name[0], anthill) && ft_name_ok(name[1], anthill))
 			return (1);
 	}
-	return (0);
+	return (ft_error4());
 }
 
 int		ft_name_ok(char *s, t_plst *anthill)

@@ -1,4 +1,14 @@
-.PHONY: all clean fclean re norme
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: estephan <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/03/09 15:16:39 by estephan          #+#    #+#              #
+#    Updated: 2017/03/09 17:30:15 by estephan         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 CC = gcc
 
@@ -6,19 +16,22 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = lem_in
 
-SRC =		src/ft_is_room.c\
-			src/ft_list.c\
-			src/ft_parsing.c\
-			src/ft_errors.c\
-			src/ft_links.c\
-			src/ft_nb_ants.c\
-			src/utils.c\
-			src/utils_2.c\
-			src/get_next_line.c\
-			src/lem_in.c\
-			src/ft_add_pos.c\
-			src/ft_move_ants.c\
-			src/list_utils.c
+SRC_DIR = src/
+
+SRC =	ft_is_room.c\
+		ft_list.c\
+		ft_parsing.c\
+		ft_errors.c\
+		ft_links.c\
+		ft_nb_ants.c\
+		utils.c\
+		utils_2.c\
+		get_next_line.c\
+		lem_in.c\
+		ft_add_pos.c\
+		ft_move_ants.c\
+		list_utils.c\
+		norm.c
 
 OBJS = ft_is_room.o\
 	   ft_list.o\
@@ -32,33 +45,40 @@ OBJS = ft_is_room.o\
 	   lem_in.o\
 	   ft_add_pos.o\
 	   ft_move_ants.o\
-	   list_utils.o
+	   list_utils.o\
+	   norm.o
 
 INC_NAME = lem_in.h
 
 LIB = libft/
 
-
-$(NAME): lib printf
-	$(CC) $(FLAGS) -I $(LIB) -c $(SRC)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS) -L $(LIB) -lft ft_printf/libftprintf.a
+all: lib printf $(NAME)
 
 lib:
-	make -C $(LIB)
+	@make -C $(LIB)
 
 printf:
-	make -C ft_printf
-all: $(NAME)
+	@make -C ft_printf
+
+$(NAME): $(OBJS)
+	@$(CC) $(FLAGS) -o $@ $^ -L $(LIB) -lft ft_printf/libftprintf.a
+
+%.o: $(SRC_DIR)%.c
+	@$(CC) $(FLAGS) -c $< -I $(LIB)
 
 clean:
-	make -C $(LIB) clean
-	rm -f $(OBJS)
+	@make -C $(LIB) clean
+	@rm -f $(OBJS)
+	@echo "\033[1;34mLem_in\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	make -C $(LIB) fclean
-	rm -f $(NAME)
+	@make -C $(LIB) fclean
+	@rm -f $(NAME)
+	@echo "\033[1;34mLem_in\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
 
 norme:
-	norminette $(SRCS) fillit.h
+	@norminette $(SRCS)
+
+.PHONY: all lib printf clean fclean re norme

@@ -28,21 +28,19 @@ ft_tabdel.c
 
 F =-Wall -Werror -Wextra
 
-CO = $(SRC:.c=.o)
+CO =$(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(CO)
-	@ar rc $(NAME) $(CO)
-	@ranlib $(NAME)
-
-%.o: %.c
-	@gcc $(F) -c $< -I includes 
+$(NAME):
+		@gcc -c $(F) $(SRC) -I includes 
+		@ar rc $(NAME) $(CO)
+		@ranlib $(NAME)
 
 clean:
-	@rm -rf $(CO)
+		@rm -rf $(CO)
 
 fclean: clean
-	@rm -rf $(NAME)
+		@rm -rf $(NAME)
 
 re: fclean all
